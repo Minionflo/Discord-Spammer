@@ -2,8 +2,6 @@ const Discord = require('discord.js')
 const { MessageEmbed } = require('discord.js')
 const fs      = require('fs')
 
-const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
-
 var client = new Discord.Client()
 var config_token = process.env.TOKEN
 var config_prefix = process.env.PREFIX
