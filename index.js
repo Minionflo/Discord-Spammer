@@ -1,6 +1,6 @@
-const Discord = require('discord.js')
+const Discord          = require('discord.js')
 const { MessageEmbed } = require('discord.js')
-const fs      = require('fs')
+const fs               = require('fs')
 
 var client = new Discord.Client()
 var config_token = process.env.TOKEN
@@ -68,14 +68,14 @@ function cmd_setvictim (msg, args) {
     client.guilds.fetch(config_bcserver)
     fs.writeFileSync('ids/victim.json', args.toString(), 'UTF8')
     console.log("Set Victim worked")
-    client.channels.cache.get(config_bcchannel).send("Server ID set")
+    client.channels.cache.get(config_bcchannel).send("Victim ID set")
             }
 
 function cmd_setmsg (msg, args) {
     console.log("Set msg started")
     try {
         client.guilds.fetch(config_bcserver)
-        fs.writeFileSync('ids/msg.json', args.toString(), 'UTF8')
+        fs.writeFileSync('ids/msg.json', args.join(" ").toString(), 'UTF8')
         console.log("Set msg worked")
         client.channels.cache.get(config_bcchannel).send("msg set")
     }
